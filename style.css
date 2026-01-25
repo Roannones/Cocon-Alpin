@@ -1,0 +1,23 @@
+html{
+    background-color: rgb(236,231,224);
+    font-size: 20px;
+}
+body{
+    margin: 20px;
+    
+}
+
+.top{
+    display: flex;
+    justify-content:space-between;
+    border-bottom: 1px solid; 
+    padding-bottom: 20px;
+}
+.top .left{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 20px;
+    border: 2px solid;
+    border-radius: 10px;
+}
