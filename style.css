@@ -3,13 +3,16 @@ html{
     font-size: 20px;
 }
 body{
-    margin: 20px;
-    
+  min-width: 600px;
+  max-width: 1500px;
+  margin: 0 auto; /* centers horizontally */
+  padding:40px;
 }
 
 .top{
     display: flex;
     justify-content:space-between;
+    align-items: center;
     border-bottom: 1px solid; 
     padding-bottom: 20px;
 }
@@ -20,4 +23,14 @@ body{
     padding: 3px 20px;
     border: 2px solid;
     border-radius: 10px;
+}
+
+.presentation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.presentation img{
+    height:auto;
+    width : 100%;
 }
