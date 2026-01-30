@@ -21,9 +21,12 @@ body{
     border: 2px solid;
     border-radius: 10px;
 }
-#sideMenu a{
+#sideMenu ul{
+ margin-top: 50px;
  color: red;
-margin-top: 20px;
+ display: flex;
+ flex-direction: column;
+ gap: 50px;
 }
 
 
