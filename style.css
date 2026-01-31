@@ -1,12 +1,23 @@
-
-html{
+csshtml{
     background-color: rgb(236,231,224);
     font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
 }
+
 body{
-  min-width: 600px;
+  min-width: 320px; /* Allows iPhone screens */
   max-width: 1500px;
   margin: 0 auto; /* centers horizontally */
+}
+
+/* Optional: Responsive breakpoints for different screen sizes */
+@media (max-width: 768px) {
+  html {
+    font-size: 16px; /* Smaller font on mobile */
+  }
+  body {
+    padding-top: 70px; /* Adjust if your header is smaller on mobile */
+  }
 }
 header{
   background-color: rgba(223, 215, 203, 1);
