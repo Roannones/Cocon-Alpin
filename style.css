@@ -9,12 +9,14 @@ body{
   max-width: 1500px;
   margin: 0 auto; /* centers horizontally */
 }
+
 header{
   background-color: rgba(223, 215, 203, 1);
   position: fixed;
-  min-width: 600px;
+  min-width: 320px; /* Changed from 600px to support iPhone */
   max-width: 1500px;
   width: 100%;
+  z-index: 900; /* Ensure header stays above content */
 }
 
 .top{
@@ -25,6 +27,14 @@ header{
   align-items: center;
   border-bottom: 1px solid;
 }
+
+/* Mobile adjustments for .top */
+@media (max-width: 480px) {
+  .top {
+    padding: 20px 15px;
+  }
+}
+
 /*Slide bar */
 #menuBtn {
   background: none;
@@ -38,49 +48,98 @@ header{
   border: 2px solid;
   border-radius: 10px;
 }
+
+/* Mobile adjustments for menu button */
+@media (max-width: 480px) {
+  #menuBtn {
+    padding: 3px 10px;
+    font-size: 0.9rem;
+  }
+}
+
 #sideMenu ul{
   margin-top: 50px;
   display: flex;
   flex-direction: column;
   gap: 50px;
   list-style-type: none;
-  padding: 10;
-
+  padding: 10px;
 }
+
 #sideMenu a{
   text-decoration: none;
   color: inherit;
   color: black;
   font-weight: bold;
 }
+
 #sideMenu button{
-  margin-left: 180px;
-  margin-top: ;
+  margin-left: right;
 }
 
 .page{
-padding: 40px;
+  padding: 40px;
 }
+
+/* Mobile adjustments for .page */
+@media (max-width: 480px) {
+  .page {
+    padding: 20px 15px;
+  }
+}
+
 #vision{
   padding-top: 120px;
 }
+
+/* Mobile adjustments for #vision */
+@media (max-width: 480px) {
+  #vision {
+    padding-top: 100px;
+  }
+}
+
 .presentation{
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.presentation img{
-    height:auto;
-    width : 100%;
-}
-.presentation .left{
-  width:150%;
+
+/* Mobile: Stack presentation vertically */
+@media (max-width: 768px) {
+  .presentation {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
+.presentation img{
+    height: auto;
+    width: 100%;
+}
+
+.presentation .left{
+  width: 150%;
+}
+
+/* Mobile: Reset width for stacked layout */
+@media (max-width: 768px) {
+  .presentation .left {
+    width: 100%;
+  }
+}
 
 .title{
     font-weight: bold;
 }
+
+/* Mobile: Reduce title size */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.2rem;
+  }
+}
+
 .prestation {
     background-color: rgba(223, 215, 203, 1);
     width: 100%;
@@ -89,9 +148,16 @@ padding: 40px;
 }
 
 .carousel {
-    width: 100%;              /* adapts to prestation */
+    width: 100%;
     overflow: hidden;
     margin: 40px auto;
+}
+
+/* Mobile: Reduce carousel margin */
+@media (max-width: 480px) {
+  .carousel {
+    margin: 20px auto;
+  }
 }
 
 .track {
@@ -100,19 +166,46 @@ padding: 40px;
 }
 
 .track img {
-    flex: 0 0 33.3333%;       /*  ALWAYS 3 images */
+    flex: 0 0 33.3333%;       /*  3 images on desktop */
     max-width: 33.3333%;
     height: auto;
     object-fit: cover;
     padding: 25px;
-    box-sizing: border-box;   /* CRITICAL */
+    box-sizing: border-box;
 }
+
+/* Mobile: Show 1 image at a time */
+@media (max-width: 480px) {
+  .track img {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 15px;
+  }
+}
+
+/* Tablet: Show 2 images at a time */
+@media (min-width: 481px) and (max-width: 768px) {
+  .track img {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 20px;
+  }
+}
+
 button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 20%;
     background-color: rgba(255, 255, 255, 0);
+}
+
+/* Mobile: Adjust button size */
+@media (max-width: 480px) {
+  button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
 }
 
 #sideMenu {
@@ -122,13 +215,27 @@ button {
   width: 250px;
   height: 100%;
   background: rgba(223, 215, 203);
-  transform: translateX(-100%); /* Hidden by default */
+  transform: translateX(-100%);
   transition: transform 0.3s ease;
   z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Mobile: Make side menu wider (more usable) */
+@media (max-width: 480px) {
+  #sideMenu {
+    width: 280px;
+    padding: 15px;
+  }
+  
+  #sideMenu button {
+    margin-left: 150px;
+  }
 }
 
 #sideMenu.open {
-  transform: translateX(0); /* Slides in */
+  transform: translateX(0);
 }
 
 #overlay {
@@ -147,4 +254,19 @@ button {
 #overlay.open {
   opacity: 1;
   pointer-events: all;
+}
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* Prevent iOS Safari from shrinking content */
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+/* Prevent horizontal scrolling on small screens */
+@media (max-width: 480px) {
+  html, body {
+    overflow-x: hidden;
+  }
 }
