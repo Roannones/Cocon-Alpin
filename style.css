@@ -45,8 +45,9 @@ header{
   align-items: center;
   gap: 5px;
   padding: 3px 20px;
-  border: 2px solid;
+  border: 2px solid black;
   border-radius: 10px;
+  color: black;S
 }
 
 /* Mobile adjustments for menu button */
@@ -73,8 +74,9 @@ header{
   font-weight: bold;
 }
 
-#sideMenu button{
-  margin-left: right;
+#sideMenu #clc{
+ display: flex;
+ justify-content: right;
 }
 
 .page{
@@ -133,8 +135,8 @@ header{
     font-weight: bold;
 }
 
-/* Mobile: Reduce title size */
-@media (max-width: 480px) {
+/* Mobile: Reduce title size 480*/
+@media (max-width: 768px) {
   .title {
     font-size: 1.2rem;
   }
@@ -153,8 +155,8 @@ header{
     margin: 40px auto;
 }
 
-/* Mobile: Reduce carousel margin */
-@media (max-width: 480px) {
+/* Mobile: Reduce carousel margin max 480*/
+@media (max-width: 768px) {
   .carousel {
     margin: 20px auto;
   }
@@ -174,23 +176,23 @@ header{
     box-sizing: border-box;
 }
 
-/* Mobile: Show 1 image at a time */
-@media (max-width: 480px) {
+/* Mobile: Show 2 image at a timen max 480 for screen phone */
+@media (max-width: 768px) {
   .track img {
-    flex: 0 0 100%;
-    max-width: 100%;
-    padding: 15px;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 5px;
   }
 }
 
 /* Tablet: Show 2 images at a time */
-@media (min-width: 481px) and (max-width: 768px) {
+/*@media (min-width: 481px) and (max-width: 768px) {
   .track img {
     flex: 0 0 50%;
     max-width: 50%;
     padding: 20px;
   }
-}
+}*/
 
 button {
     padding: 10px 20px;
@@ -198,6 +200,7 @@ button {
     cursor: pointer;
     border-radius: 20%;
     background-color: rgba(255, 255, 255, 0);
+    color: black;
 }
 
 /* Mobile: Adjust button size */
