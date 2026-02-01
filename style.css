@@ -1,4 +1,4 @@
-csshtml{
+html{
     background-color: rgb(236,231,224);
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
@@ -8,16 +8,6 @@ body{
   min-width: 320px; /* Allows iPhone screens */
   max-width: 1500px;
   margin: 0 auto; /* centers horizontally */
-}
-
-/* Optional: Responsive breakpoints for different screen sizes */
-@media (max-width: 768px) {
-  html {
-    font-size: 16px; /* Smaller font on mobile */
-  }
-  body {
-    padding-top: 70px; /* Adjust if your header is smaller on mobile */
-  }
 }
 header{
   background-color: rgba(223, 215, 203, 1);
@@ -63,27 +53,37 @@ header{
   color: black;
   font-weight: bold;
 }
+#sideMenu button{
+  margin-left: 180px;
+  margin-top: ;
+}
 
-main{
-  padding: 40px;
+.page{
+padding: 40px;
+}
+#vision{
+  padding-top: 120px;
 }
 .presentation{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 50px;
 }
 .presentation img{
     height:auto;
     width : 100%;
 }
+.presentation .left{
+  width:150%;
+}
+
+
 .title{
     font-weight: bold;
 }
 .prestation {
     background-color: rgba(223, 215, 203, 1);
-    min-width: 600px;
-    max-width: 1500px;
+    width: 100%;
     height: auto;
     margin: auto;
 }
