@@ -12,7 +12,7 @@ let index = 0;
 const visibleImages = 3;
 const maxIndex = images.length - visibleImages;
 
-/*Drag variables*/
+// Drag variables
 let isDragging = false;
 let startPos = 0;
 let currentTranslate = 0;
@@ -36,27 +36,32 @@ nextBtn.addEventListener("click", () => {
     moveToIndex(index);
 });
 
-// Mouse down event
-track.addEventListener("mousedown", (e) => {
+// Get position from mouse or touch event
+function getPositionX(event) {
+    return event.type.includes('mouse') ? event.clientX : event.touches[0].clientX;
+}
+
+// Start dragging (mouse and touch)
+function dragStart(e) {
     isDragging = true;
-    startPos = e.clientX;
+    startPos = getPositionX(e);
     track.style.cursor = "grabbing";
     track.style.transition = "none";
-});
+}
 
-// Mouse move event
-track.addEventListener("mousemove", (e) => {
+// While dragging (mouse and touch)
+function dragMove(e) {
     if (!isDragging) return;
     
-    const currentPosition = e.clientX;
+    const currentPosition = getPositionX(e);
     const diff = currentPosition - startPos;
     currentTranslate = prevTranslate + diff;
     
     track.style.transform = `translateX(${currentTranslate}px)`;
-});
+}
 
-// Mouse up event
-track.addEventListener("mouseup", (e) => {
+// End dragging (mouse and touch)
+function dragEnd(e) {
     isDragging = false;
     track.style.cursor = "grab";
     track.style.transition = "transform 0.3s ease";
@@ -71,17 +76,22 @@ track.addEventListener("mouseup", (e) => {
     }
     
     moveToIndex(index);
-});
+}
 
-// Mouse leave event (in case mouse leaves the track while dragging)
+// Mouse events
+track.addEventListener("mousedown", dragStart);
+track.addEventListener("mousemove", dragMove);
+track.addEventListener("mouseup", dragEnd);
 track.addEventListener("mouseleave", () => {
     if (isDragging) {
-        isDragging = false;
-        track.style.cursor = "grab";
-        track.style.transition = "transform 0.3s ease";
-        moveToIndex(index);
+        dragEnd();
     }
 });
+
+// Touch events for mobile
+track.addEventListener("touchstart", dragStart);
+track.addEventListener("touchmove", dragMove);
+track.addEventListener("touchend", dragEnd);
 
 // Set initial cursor style
 track.style.cursor = "grab";
