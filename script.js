@@ -9,19 +9,86 @@ const sideMenu = document.getElementById('sideMenu');
 const overlay = document.getElementById('overlay');
 
 let index = 0;
-/*const imageWidth = 450;*/
 const visibleImages = 3;
 const maxIndex = images.length - visibleImages;
 
-nextBtn.addEventListener("click", () => {
+/*Drag variables*/
+let isDragging = false;
+let startPos = 0;
+let currentTranslate = 0;
+let prevTranslate = 0;
 
+// Function to move the carousel to a specific index
+function moveToIndex(newIndex) {
+    index = newIndex;
+    currentTranslate = -index * imageWidth;
+    prevTranslate = currentTranslate;
+    track.style.transform = `translateX(${currentTranslate}px)`;
+}
+
+// Button click handler
+nextBtn.addEventListener("click", () => {
     if (index < maxIndex) {
         index++;
     } else {
-        index = 0; // reset au début
+        index = 0;
     }
+    moveToIndex(index);
+});
 
-    track.style.transform = `translateX(-${index * imageWidth}px)`;
+// Mouse down event
+track.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    startPos = e.clientX;
+    track.style.cursor = "grabbing";
+    track.style.transition = "none";
+});
+
+// Mouse move event
+track.addEventListener("mousemove", (e) => {
+    if (!isDragging) return;
+    
+    const currentPosition = e.clientX;
+    const diff = currentPosition - startPos;
+    currentTranslate = prevTranslate + diff;
+    
+    track.style.transform = `translateX(${currentTranslate}px)`;
+});
+
+// Mouse up event
+track.addEventListener("mouseup", (e) => {
+    isDragging = false;
+    track.style.cursor = "grab";
+    track.style.transition = "transform 0.3s ease";
+    
+    const movedBy = currentTranslate - prevTranslate;
+    
+    // If dragged more than 100px, move to next/prev image
+    if (movedBy < -100 && index < maxIndex) {
+        index++;
+    } else if (movedBy > 100 && index > 0) {
+        index--;
+    }
+    
+    moveToIndex(index);
+});
+
+// Mouse leave event (in case mouse leaves the track while dragging)
+track.addEventListener("mouseleave", () => {
+    if (isDragging) {
+        isDragging = false;
+        track.style.cursor = "grab";
+        track.style.transition = "transform 0.3s ease";
+        moveToIndex(index);
+    }
+});
+
+// Set initial cursor style
+track.style.cursor = "grab";
+
+// Prevent default drag behavior on images
+images.forEach((image) => {
+    image.addEventListener("dragstart", (e) => e.preventDefault());
 });
 
 
