@@ -15,6 +15,7 @@ const maxIndex = images.length - visibleImages;
 // Drag variables
 let isDragging = false;
 let startPos = 0;
+let startPosY = 0;
 let currentTranslate = 0;
 let prevTranslate = 0;
 
@@ -41,10 +42,15 @@ function getPositionX(event) {
     return event.type.includes('mouse') ? event.clientX : event.touches[0].clientX;
 }
 
+function getPositionY(event) {
+    return event.type.includes('mouse') ? event.clientY : event.touches[0].clientY;
+}
+
 // Start dragging (mouse and touch)
 function dragStart(e) {
     isDragging = true;
     startPos = getPositionX(e);
+    startPosY = getPositionY(e);
     track.style.cursor = "grabbing";
     track.style.transition = "none";
 }
@@ -54,9 +60,17 @@ function dragMove(e) {
     if (!isDragging) return;
     
     const currentPosition = getPositionX(e);
+    const currentPositionY = getPositionY(e);
     const diff = currentPosition - startPos;
-    currentTranslate = prevTranslate + diff;
+    const diffY = currentPositionY - startPosY;
     
+    // Check if horizontal movement is greater than vertical
+    if (Math.abs(diff) > Math.abs(diffY)) {
+        // Prevent page scroll when swiping horizontally
+        e.preventDefault();
+    }
+    
+    currentTranslate = prevTranslate + diff;
     track.style.transform = `translateX(${currentTranslate}px)`;
 }
 
@@ -88,9 +102,9 @@ track.addEventListener("mouseleave", () => {
     }
 });
 
-// Touch events for mobile
-track.addEventListener("touchstart", dragStart);
-track.addEventListener("touchmove", dragMove);
+// Touch events for mobile (with passive: false to allow preventDefault)
+track.addEventListener("touchstart", dragStart, { passive: false });
+track.addEventListener("touchmove", dragMove, { passive: false });
 track.addEventListener("touchend", dragEnd);
 
 // Set initial cursor style
