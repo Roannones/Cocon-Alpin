@@ -40,14 +40,13 @@ header{
   background: none;
   border: none;
   cursor: pointer;
-  font: inherit;
   display: flex;
   align-items: center;
   gap: 5px;
   padding: 3px 20px;
   border: 2px solid black;
   border-radius: 10px;
-  color: black;S
+
 }
 
 /* Mobile adjustments for menu button */
@@ -66,11 +65,20 @@ header{
   list-style-type: none;
   padding: 10px;
 }
+/* for sideMenuPresantation*/
+#sideMenu ul ul {
+  gap: 5px; /* Override the parent gap */
+  margin: 10px;
+  padding: 0;
+}
+#sideMenuPrestation ul li{
+  padding: 5px; /* Add some internal padding if needed */
+
+}
 
 #sideMenu a{
   text-decoration: none;
   color: inherit;
-  color: black;
   font-weight: bold;
 }
 
@@ -78,6 +86,10 @@ header{
  display: flex;
  justify-content: right;
 }
+
+
+
+
 
 .page{
   padding: 40px;

@@ -3,10 +3,6 @@ const images = document.querySelectorAll(".track img");
 const imageWidth = images[0].getBoundingClientRect().width;
 const nextBtn = document.querySelector("#next");
 
-const menuBtn = document.getElementById('menuBtn');
-const closeBtn = document.getElementById('closeBtn');
-const sideMenu = document.getElementById('sideMenu');
-const overlay = document.getElementById('overlay');
 
 let index = 0;
 const visibleImages = 3;
@@ -116,6 +112,14 @@ images.forEach((image) => {
 });
 
 
+
+const menuBtn = document.getElementById('menuBtn');
+const closeBtn = document.getElementById('closeBtn');
+const sideMenu = document.getElementById('sideMenu');
+const overlay = document.getElementById('overlay');
+const sideMenuSection = document.querySelectorAll('#sideMenu .Section');
+const sideMenuSectionAll = document.querySelectorAll('#sideMenu a');
+
 menuBtn.addEventListener('click', () => {
   sideMenu.classList.add('open');
   overlay.classList.add('open');
@@ -128,3 +132,58 @@ function closeMenu() {
   sideMenu.classList.remove('open');
   overlay.classList.remove('open');
 }
+
+// side menu section to leave when click and underline 
+// ( expect prestation where different action)
+sideMenuSection.forEach(section => {
+    section.addEventListener('click', closeMenu);
+
+    section.addEventListener('mouseenter', () => {
+        section.style.textDecoration = 'underline';
+    });
+    section.addEventListener('mouseleave', () => {
+        section.style.textDecoration = 'none';
+    });
+});
+
+// for side menu presetation when mouse enter all prestation appear under it
+const sideMenuPrestation = document.getElementById('sideMenuPrestation');
+const prestationLink = sideMenuPrestation.querySelector('a');
+
+prestationLink.addEventListener('mouseenter', () => {
+    prestationLink.style.textDecoration = 'underline';
+});
+prestationLink.addEventListener('mouseleave', () => {
+    prestationLink.style.textDecoration = 'none';
+});
+
+sideMenuPrestation.addEventListener('click', (e) => {
+    e.preventDefault(); // Prevent the link from navigating
+    
+    let existingMenu = sideMenuPrestation.querySelector('ul');
+    
+    if (existingMenu) {
+        existingMenu.remove();
+    } else {
+        const prestations = ['Prestation 1', 'Prestation 2', 'Prestation 3', 'Prestation 4'];
+        const menuPres = document.createElement("ul");
+        
+        prestations.forEach(presta => {
+            const li = document.createElement('li');
+            li.textContent = presta;
+            li.style.cursor = 'pointer'; // To have pointer also on presta
+
+            li.addEventListener('mouseenter', () => {
+                li.style.textDecoration = 'underline';
+            });
+            
+            li.addEventListener('mouseleave', () => {
+                li.style.textDecoration = 'none';
+            });
+            
+            menuPres.appendChild(li);
+        });
+        
+        sideMenuPrestation.appendChild(menuPres);
+    }
+});
