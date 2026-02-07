@@ -62,7 +62,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px 5px;
+    padding: 20px 20px;
     
 }
 
@@ -93,19 +93,22 @@
 
 /* Mobile: Adjust button size */
 @media (max-width: 480px) {
-  #title  div{
-        font-size: 20px;
-        line-height: 1.6;
-  }
-  #title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 320px;
-  }
+ #title {
+    font-size: 20px;
+    line-height: 1.6;
+    width: 100%; /* Take full width instead of 50% */
+    text-align: center; /* Center the text */
+    margin: 10px; /* Reduce margin */
+    }
+#title div {
+    width: 100%; /* Remove fixed 350px width */
+    max-width: 350px; /* Optional: limit maximum width */
+    margin: 0 auto; /* Center the div */
+    }
   .titlePrice{
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 .resume{
     display: flex;
@@ -118,5 +121,8 @@ width: 320px;
 }
 .page{
     padding-top: 100px;
+}
+.text{
+    padding: 0px 20px;
 }
 }

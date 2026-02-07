@@ -9,8 +9,8 @@ html{
     font-family: 'Times New Roman', Times, serif;
 }
 @media (max-width: 480px) {
- html {
-    font-size: 15px;
+.page {
+    font-size: 16px;
   }
 }
 
