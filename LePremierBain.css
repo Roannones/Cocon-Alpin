@@ -7,6 +7,8 @@
     padding-top: 180px;
     display: flex;
     flex-direction: column;
+    justify-items: center;
+    align-items: center;
     gap: 40px;
 }
 
@@ -19,6 +21,7 @@
     width: 50%;
     font-style: italic;
 }
+
 #title div{
     width: 350px;
 }
@@ -86,4 +89,31 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* Mobile: Adjust button size */
+@media (max-width: 480px) {
+  #title  div{
+        font-size: 20px;
+        line-height: 1.6;
+  }
+  #title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+  }
+  .titlePrice{
+    display: flex;
+    flex-direction: column;
+}
+.resume{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.resume .left, .resume .right{
+
+width: 350px;
+}
 }

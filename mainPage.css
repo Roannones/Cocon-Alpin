@@ -8,6 +8,12 @@ html{
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
 }
+@media (max-width: 480px) {
+ html {
+    font-size: 15px;
+  }
+}
+
 
 body{
   min-width: 320px; /* Allows iPhone screens */
