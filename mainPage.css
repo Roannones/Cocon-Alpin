@@ -1,0 +1,179 @@
+:root {
+    --primary-color: rgb(255, 249, 235);
+    --Rose: rgb(254, 233, 210);
+    --Second-color : rgba(223, 215, 203, 1);
+}
+html{
+    background-color: var(--primary-color);
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body{
+  min-width: 320px; /* Allows iPhone screens */
+  max-width: 1500px;
+  margin: 0 auto; /* centers horizontally */
+}
+
+header{
+  background-color: var(--Second-color);
+  position: fixed;
+  min-width: 320px; /* Changed from 600px to support iPhone */
+  max-width: 1500px;
+  width: 100%;
+  z-index: 900; /* Ensure header stays above content */
+}
+
+.top{
+  margin: 0 auto;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid;
+}
+
+/* Mobile adjustments for .top */
+@media (max-width: 480px) {
+  .top {
+    padding: 20px 15px;
+  }
+}
+
+/*Slide bar */
+#menuBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+
+}
+
+/* Mobile adjustments for menu button */
+@media (max-width: 480px) {
+  #menuBtn {
+    padding: 3px 10px;
+    font-size: 0.9rem;
+  }
+}
+
+#sideMenu ul{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  list-style-type: none;
+  padding: 10px;
+}
+/* for sideMenuPresantation*/
+#sideMenu ul ul {
+  gap: 5px; /* Override the parent gap */
+  margin: 10px;
+  padding: 0;
+}
+#sideMenuPrestation ul li{
+  padding: 5px; /* Add some internal padding if needed */
+}
+
+#sideMenu a{
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+#sideMenu #clc{
+ display: flex;
+ justify-content: right;
+}
+
+#sideMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background: var(--Second-color);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Mobile: Make side menu wider (more usable) */
+@media (max-width: 480px) {
+  #sideMenu {
+    width: 280px;
+    padding: 15px;
+  }
+  
+  #sideMenu button {
+    margin-left: 150px;
+  }
+}
+
+#sideMenu.open {
+  transform: translateX(0);
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+#overlay.open {
+  opacity: 1;
+  pointer-events: all;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20%;
+    background-color: rgba(255, 255, 255, 0);
+    color: black;
+    list-style-type: none;
+}
+
+/* Mobile: Adjust button size */
+@media (max-width: 480px) {
+  button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+
+.page{
+  padding: 80px;
+}
+
+/* Mobile adjustments for .page */
+@media (max-width: 480px) {
+  .page {
+    padding: 20px 15px;
+  }
+}
+
+#vision{
+  padding-top: 120px;
+}
+
+/* Mobile adjustments for #vision */
+@media (max-width: 480px) {
+  #vision {
+    padding-top: 100px;
+  }
+}

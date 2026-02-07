@@ -1,0 +1,89 @@
+
+:root {
+    --Rose: rgb(254, 233, 210);
+    --Second-color : rgba(223, 215, 203, 1);;
+}
+.page{
+    padding-top: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.titlePrice{
+    display: flex;
+}
+#title{
+    font-size: 30px;
+    margin: 20px;
+    width: 50%;
+    font-style: italic;
+}
+#title div{
+    width: 350px;
+}
+
+#priceTiming{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+#when{
+    background-color: var(--Rose);
+    padding: 10px 30px ;
+     border-radius: 10px;
+    border: 1px solid var(--Rose);
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+#pouquoi{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+.secondText{
+    background-color: var(--Rose);
+    display: flex;
+    justify-content :center;
+    border-radius: 10px;
+    border: 1px solid var(--Rose);
+}
+.stext{
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 5px;
+    
+}
+
+.resume{
+    display: flex;
+    gap: 20px;
+}
+.resume .left, .resume .right{
+    border-radius: 10px;
+    border: 2px solid var(--Rose);
+    padding: 20px;  
+}
+
+.bottom{
+    display: flex;
+    justify-content: center;
+}
+#bt{
+    width: 400px;
+    background-color: var(--Rose);
+    border-radius: 10px;
+    border: 2px solid var(--Rose);
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
