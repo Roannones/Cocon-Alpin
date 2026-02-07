@@ -183,3 +183,18 @@ button {
     padding-top: 100px;
   }
 }
+
+/* iOS Safari specific fixes */
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* Prevent iOS Safari from shrinking content */
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+/* Prevent horizontal scrolling on small screens */
+@media (max-width: 480px) {
+  html, body {
+    overflow-x: hidden;
+  }
+}
