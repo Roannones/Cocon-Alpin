@@ -58,22 +58,26 @@
     border: 1px solid var(--Rose);
 }
 .stext{
-    width: 800px;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 20px 20px;
     
 }
 
 .resume{
     display: flex;
+    justify-content: center;
+    align-items: stretch;
     gap: 20px;
 }
 .resume .left, .resume .right{
     border-radius: 10px;
     border: 2px solid var(--Rose);
     padding: 20px;  
+
 }
 
 .bottom{
@@ -105,7 +109,7 @@
     max-width: 350px; /* Optional: limit maximum width */
     margin: 0 auto; /* Center the div */
     }
-  .titlePrice{
+.titlePrice{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -113,16 +117,55 @@
 .resume{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    gap: 40px;
+    width: 100%;
 }
-.resume .left, .resume .right{
 
-width: 320px;
-}
 .page{
     padding-top: 100px;
+    margin: 0px 10px;
 }
 .text{
     padding: 0px 20px;
 }
+.stext{
+    justify-content: left;
+    align-items: baseline;
+}
+}
+
+@media (min-width: 480px) and (max-width: 800px) {
+#title {
+    line-height: 1.6;
+    width: 100%; /* Take full width instead of 50% */
+    text-align: center; /* Center the text */
+    margin: 10px; /* Reduce margin */
+    }
+#title div {
+    width: 100%; /* Remove fixed 350px width */
+    max-width: 350px; /* Optional: limit maximum width */
+    margin: 0 auto; /* Center the div */
+    }
+.titlePrice{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.resume{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 40px;
+    width: 100%;
+}
+.page{
+    padding-top: 140px;
+}
+
+.stext{
+    justify-content: left;
+    align-items: baseline;
+}
+
 }
