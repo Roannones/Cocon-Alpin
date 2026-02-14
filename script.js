@@ -167,9 +167,9 @@ sideMenuPrestation.addEventListener('click', (e) => {
     } else {
         const prestations = [
             { text: 'Le premier bain', href: 'LePremierBain.html' },
-            { text: 'Prestation 2', href: '#presta2' },
-            { text: 'Prestation 3', href: '#presta3' },
-            { text: 'Prestation 4', href: '#presta4' }
+            { text: 'Le bain enveloppe', href: 'LeBainEnveloppe.html' },
+            { text: 'Baby massage', href: 'BabyMassage.html' },
+            { text: 'The pack cocon alpin', href: 'ThePackCoconAlpin.html' }
         ];
         
         const menuPres = document.createElement("ul");
