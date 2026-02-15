@@ -170,7 +170,11 @@ sideMenuPrestation.addEventListener('click', (e) => {
             { text: 'Le bain enveloppe', href: 'LeBainEnveloppe.html' },
             { text: 'Baby massage', href: 'BabyMassage.html' },
             { text: 'The pack cocon alpin', href: 'ThePackCoconAlpin.html' },
-             
+            { text: 'Baby Spa', href: 'BabySpa.html' },
+            { text: 'Baby Spa + Massage', href: 'BabySpaMassage.html' },
+            { text: 'Pack 3 seances baby spa', href: 'Pack3SeancesBabySpa.html' },
+            { text: 'Un anniversaire pas comme les autres', href: 'UnAnniversairePasCommeLesAutres.html' }
+   
         ];
         
         const menuPres = document.createElement("ul");
