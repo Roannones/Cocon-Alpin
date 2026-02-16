@@ -91,3 +91,17 @@ sideMenuPrestation.addEventListener('click', (e) => {
         sideMenuPrestation.appendChild(menuPres);
     }
 });
+
+// underline prestation on footer
+const foot2Links = document.querySelectorAll('.foot2 a');
+
+// Add event listeners to each link
+foot2Links.forEach(link => {
+    link.addEventListener('mouseenter', () => {
+        link.style.textDecoration = 'underline';
+    });
+    
+    link.addEventListener('mouseleave', () => {
+        link.style.textDecoration = 'none';
+    });
+});

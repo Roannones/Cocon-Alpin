@@ -3,47 +3,43 @@
     --Rose: rgb(254, 233, 210);
     --Second-color : rgba(223, 215, 203, 1);
 }
+/* Add this universal box-sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 html{
     background-color: var(--primary-color);
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
-}
-@media (max-width: 480px) {
-.page {
-    font-size: 16px;
-  }
+    height: 100%;
 }
 
 
 body{
-  min-width: 320px; /* Allows iPhone screens */
-  max-width: 1500px;
-  margin: 0 auto; /* centers horizontally */
+    min-width: 320px;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
 }
 
 header{
   background-color: var(--Second-color);
   position: fixed;
   min-width: 320px; /* Changed from 600px to support iPhone */
-  max-width: 1500px;
+  /*max-width: 1500px;*/
   width: 100%;
   z-index: 900; /* Ensure header stays above content */
 }
 
 .top{
   margin: 0 auto;
-  padding: 40px;
+  padding: 20px 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid;
-}
-
-/* Mobile adjustments for .top */
-@media (max-width: 480px) {
-  .top {
-    padding: 20px 15px;
-  }
 }
 
 /*Slide bar */
@@ -58,14 +54,6 @@ header{
   border: 2px solid black;
   border-radius: 10px;
 
-}
-
-/* Mobile adjustments for menu button */
-@media (max-width: 480px) {
-  #menuBtn {
-    padding: 3px 10px;
-    font-size: 0.9rem;
-  }
 }
 
 #sideMenu ul{
@@ -111,17 +99,7 @@ header{
   box-sizing: border-box;
 }
 
-/* Mobile: Make side menu wider (more usable) */
-@media (max-width: 480px) {
-  #sideMenu {
-    width: 280px;
-    padding: 15px;
-  }
-  
-  #sideMenu button {
-    margin-left: 150px;
-  }
-}
+/* Mobile: */
 
 #sideMenu.open {
   transform: translateX(0);
@@ -153,48 +131,105 @@ button {
     color: black;
     list-style-type: none;
 }
+.content-wrapper {
+    width: 100%;
+    max-width: 1500px;
+    margin: auto;
+}
+.footer {
+    background-color: var(--Second-color);
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 40px;
+    width: 100%;
+    margin-top: auto; /* Add this - ensures footer stays at bottom */
+    font-size: inherit;
+}
+.footer p, footer a{
+  font-size: 0.8rem;
+  padding: 2px;
+}
+.foot1, .foot2, .foot3 {
+    width: 100%; /* Each takes full width */
+    text-align:left; /* Center the text */
+  }
+  .foot3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 0;
+  }
+.page{
+    padding:40px;
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1500px;
+    margin: 0px auto;
+}
+.foot2{
+  display: flex;
+  flex-direction: column;
+}
+.foot2 a{
+  text-decoration: none;
+  color: inherit;
+}
 
-/* Mobile: Adjust button size */
 @media (max-width: 480px) {
-  button {
+  #sideMenu {
+    width: 280px;
+    padding: 15px;
+  }
+  
+  #sideMenu button {
+    margin-left: 150px;
+  }
+  .page {
+    font-size: 16px;
+    padding: 0px 15px;
+    padding-top: 100px;
+    gap: 20px;
+  }
+    #menuBtn {
+    padding: 3px 10px;
+    font-size: 0.7rem;
+  }
+    button {
     padding: 8px 15px;
     font-size: 14px;
   }
-}
-
-.page{
-  padding: 80px;
-}
-
-/* Mobile adjustments for .page */
-@media (max-width: 480px) {
-  .page {
-    padding: 20px 15px;
-  }
-}
-
-#vision{
-  padding-top: 120px;
-}
-
-/* Mobile adjustments for #vision */
-@media (max-width: 480px) {
-  #vision {
+    #vision {
     padding-top: 100px;
   }
-}
+ #sideMenu{
+  font-size: 16px;
+ }  
+  .footer{
+    font-size: 16px;
+    padding: 15px;
+    gap: 5px; /* Space between sections */
+    margin-top: 20px;
+  
+  }
+   .footer a , .footer p{
+    font-size: 12px;
+  }
+  footer img{
+    height: 25vw;
+  }
+  }
+ 
 
 /* iOS Safari specific fixes */
 @supports (-webkit-touch-callout: none) {
   body {
     /* Prevent iOS Safari from shrinking content */
     -webkit-text-size-adjust: 100%;
-  }
-}
-
-/* Prevent horizontal scrolling on small screens */
-@media (max-width: 480px) {
-  html, body {
-    overflow-x: hidden;
   }
 }

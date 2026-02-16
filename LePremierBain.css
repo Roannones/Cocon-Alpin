@@ -3,14 +3,6 @@
     --Rose: rgb(254, 233, 210);
     --Second-color : rgba(223, 215, 203, 1);;
 }
-.page{
-    padding-top: 180px;
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    justify-content: center;
-    gap: 40px;
-}
 
 .titlePrice{
     display: flex;
@@ -50,7 +42,7 @@
     display: flex;
     justify-content :center;
     align-items: stretch;
-    gap: 20px;
+    gap: 40px;
 }
 .stext{
     background-color: var(--Rose);
@@ -65,7 +57,7 @@
 
 .resume{
     display: flex;
-    justify-content: center;
+    justify-content:center;
     align-items: stretch;
     gap: 20px;
 }
@@ -131,24 +123,21 @@ p{
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    gap: 40px;
+    gap: 15px;
     width: 100%;
 }
-
-.page{
-    padding-top: 100px;
-    margin: 0px 10px;
-}
 .text{
-    padding: 0px 20px;
+    padding: 0px 10px;
+    gap: 15px;
 }
 .stext{
     justify-content: left;
     align-items: baseline;
+    gap: 10px;
 }
 .secondText{
     flex-direction: column;
-    gap: 40px;
+    gap: 10px;
 }
 }
 
@@ -175,9 +164,6 @@ p{
     align-items: stretch;
     gap: 40px;
     width: 100%;
-}
-.page{
-    padding-top: 140px;
 }
 
 .stext{
