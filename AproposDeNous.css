@@ -1,0 +1,20 @@
+.melPaola, .mel{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.imageNous img {     /* set a fixed size */
+    height: 25vh;     
+    object-fit: cover; /* prevents distortion */
+    border-radius: 50%;
+    border: 5px solid  var(--Rose);
+}
+hr {
+    border: none;
+    height: 2px;
+    background-color: var(--Rose);
+    width: 100%;
+}
