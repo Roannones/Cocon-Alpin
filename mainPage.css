@@ -144,11 +144,11 @@ button {
     justify-content: space-between;
     padding: 40px;
     width: 100%;
-    margin-top: auto; /* Add this - ensures footer stays at bottom */
+    margin-top: auto;/* Add this - ensures footer stays at bottom */
     font-size: inherit;
 }
 .footer p, footer a{
-  font-size: 0.8rem;
+  font-size: 1rem;
   padding: 2px;
 }
 .foot1, .foot2, .foot3 {
@@ -171,6 +171,7 @@ button {
     gap: 40px;
     max-width: 1500px;
     margin: 0px auto;
+    width: 100%;
 }
 .foot2{
   display: flex;
