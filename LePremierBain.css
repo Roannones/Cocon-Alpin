@@ -6,17 +6,19 @@
 
 .titlePrice{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 #title{
     font-size: 30px;
-    margin: 20px;
     width: 50%;
     font-style: italic;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #title div{
-    width: 350px;
+    width: 400px;
 }
 
 #priceTiming{
@@ -37,14 +39,35 @@
     display: flex;
     flex-direction: column;
     gap:40px;
+    text-align: justify;
 }
 .secondText{
     display: flex;
     justify-content :center;
-    align-items: stretch;
+    align-items: center;
     gap: 40px;
+    text-align: justify;
+}
+
+.secondText2{
+    display: flex;
+    justify-content :center;
+    align-items: center;
+    gap: 40px;
+    text-align: justify;
 }
 .stext{
+    background-color: var(--Rose);
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    padding: 20px 20px;
+    border-radius: 10px;
+    border: 1px solid var(--Rose);
+    text-align: center;
+}
+.stext2{
     background-color: var(--Rose);
     display: flex;
     flex-direction: column;
@@ -53,6 +76,7 @@
     padding: 20px 20px;
     border-radius: 10px;
     border: 1px solid var(--Rose);
+    width: 100%;
 }
 
 .resume{
@@ -81,6 +105,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-items: center;
+    text-align: center;
 }
 ul{
     margin: 0px;
@@ -100,13 +126,14 @@ p{
     margin: 0px;
 }
 
+
 /* Mobile: Adjust button size */
 @media (max-width: 480px) {
  #title {
     font-size: 20px;
     line-height: 1.6;
     width: 100%; /* Take full width instead of 50% */
-    text-align: center; /* Center the text */
+    text-align:center; /* Center the text */
     margin: 10px; /* Reduce margin */
     }
 #title div {
@@ -118,6 +145,7 @@ p{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
 }
 .resume{
     display: flex;

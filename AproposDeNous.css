@@ -1,4 +1,11 @@
-.melPaola, .mel, .paula{
+@font-face {
+    font-family: 'rougeScript'; /* Nom que vous allez utiliser */
+    src: url('RougeScript-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.melPaula, .mel, .paula{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,12 +21,12 @@ flex: 0 0 50%;
     width: 80%;
     height:auto;
     object-fit: cover; 
-    border-radius: 50%;
-    border: 5px solid  var(--Rose);
+    border-radius: 5%;
+    border: 3px solid  var(--Rose);
 }
 hr {
     border: none;
-    height: 5px;
+    height: 3px;
     background-color: var(--Rose);
     width: 100%;
 }
@@ -28,18 +35,28 @@ hr {
     padding: 30px;
     border: 1px solid  var(--Rose);
     border-radius: 10px;
+    text-align: justify;
 }
 .visionText{
     margin: 40px auto;
-    width: 50vw;
+    width: 70vw;
+    font-family: 'rougeScript';
+    font-size: 1.8em;
+    text-align: center;
 }
 .visionMel{
-    border: 5px solid  var(--Rose);
+    border: 2px solid  var(--Rose);
     border-radius: 10px; 
-    padding: 30px;
+    padding: 35px;
+    text-align: justify;
+}
+h3{
+    font-size: 30px;
+    font-style: italic;
+    font-weight: lighter;
 }
 @media  (min-width: 480px) and (max-width: 800px) {
-    .melPaola, .paula {
+    .melPaula, .paula {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -63,7 +80,7 @@ hr {
     }
 }
 @media (max-width: 480px){
-    .melPaola, .paula {
+    .melPaula, .paula {
     display: flex;
     flex-direction: column;
     justify-content: center;

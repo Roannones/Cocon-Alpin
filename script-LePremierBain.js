@@ -51,14 +51,14 @@ sideMenuPrestation.addEventListener('click', (e) => {
         existingMenu.remove();
     } else {
         const prestations = [
-            { text: 'Le premier bain', href: 'LePremierBain.html' },
-            { text: 'Le bain enveloppe', href: 'LeBainEnveloppe.html' },
+            { text: 'Premier bain de votre bébé', href: 'LePremierBain.html' },
+            { text: 'Bain enveloppé', href: 'LeBainEnveloppe.html' },
             { text: 'Baby massage', href: 'BabyMassage.html' },
-            { text: 'The pack cocon alpin', href: 'ThePackCoconAlpin.html' },
+            { text: 'The pack Cocon Alpin', href: 'ThePackCoconAlpin.html' },
             { text: 'Baby Spa', href: 'BabySpa.html' },
-            { text: 'Baby Spa + Massage', href: 'BabySpaMassage.html' },
-            { text: 'Pack 3 seances baby spa', href: 'Pack3SeancesBabySpa.html' },
-            { text: 'Un anniversaire pas comme les autres', href: 'UnAnniversairePasCommeLesAutres.html' }
+            { text: 'Baby Spa & Massage', href: 'BabySpaMassage.html' },
+            { text: 'Pack 3 séances Baby Spa', href: 'Pack3SeancesBabySpa.html' },
+            { text: 'Anniversaire party', href: 'UnAnniversairePasCommeLesAutres.html' }
         ];
         
         const menuPres = document.createElement("ul");
