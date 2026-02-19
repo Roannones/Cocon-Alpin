@@ -1,7 +1,12 @@
-
+@font-face {
+    font-family: 'merry'; /* Nom que vous allez utiliser */
+    src: url('Merriweather_24pt_SemiCondensed-LightItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 :root {
-    --Rose: rgb(254, 233, 210);
-    --Second-color : rgba(223, 215, 203, 1);;
+    --Rose:#efdcc6b5;
+    --Second-color: #bb8e7a;
 }
 
 .titlePrice{
@@ -15,6 +20,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-family: 'merry';
 }
 
 #title div{

@@ -4,7 +4,12 @@
     font-weight: normal;
     font-style: normal;
 }
-
+@font-face {
+    font-family: 'merry'; /* Nom que vous allez utiliser */
+    src: url('Merriweather_24pt_SemiCondensed-LightItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 .melPaula, .mel, .paula{
     display: flex;
     justify-content: center;
@@ -54,6 +59,8 @@ h3{
     font-size: 30px;
     font-style: italic;
     font-weight: lighter;
+    font-family: 'merry';
+
 }
 @media  (min-width: 480px) and (max-width: 800px) {
     .melPaula, .paula {

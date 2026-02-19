@@ -1,7 +1,33 @@
+@font-face {
+    font-family: 'dancing'; /* Nom que vous allez utiliser */
+    src: url('DancingScript-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'outfit'; /* Nom que vous allez utiliser */
+    src: url('Outfit-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h4{
+    margin: 0px;
+    font-family: 'outfit';
+    font-weight: lighter;
+    font-size: 16px;
+}
+h5{
+    margin: 0px;
+    font-family: 'dancing';  
+    font-size: 36px;
+    font-weight: lighter;
+
+}
 :root {
     --primary-color: rgb(255, 249, 235);
-    --Rose: rgb(254, 233, 210);
-    --Second-color : rgba(223, 215, 203, 1);
+    --Rose:#efdcc6ed;
+    --Second-color :#956A44;
 }
 
 /* Add this universal box-sizing */
@@ -35,12 +61,18 @@ header{
 }
 
 .top{
-  padding: 0px 15px;
+  padding: 20px 40px;
   padding-top: 20px;
   display: flex;
   justify-content: space-between;
   align-items:center;
   border-bottom: 1px solid;
+}
+.topCenter{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /*Slide bar */
