@@ -10,6 +10,12 @@
     font-weight: normal;
     font-style: normal;
 }
+@font-face {
+    font-family: 'merry'; /* Nom que vous allez utiliser */
+    src: url('Merriweather_24pt_SemiCondensed-LightItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 h4{
     margin: 0px;
@@ -68,6 +74,10 @@ header{
   align-items:center;
   border-bottom: 1px solid;
 }
+#menuBtn{
+  font-size: 16px;
+
+}
 .topCenter{
   display: flex;
   flex-direction: column;
@@ -87,7 +97,7 @@ header{
     width: 100%;
 }
 /*Slide bar */
-#menuBtn {
+button {
   background: none;
   border: none;
   cursor: pointer;
@@ -97,7 +107,11 @@ header{
   padding: 3px 20px;
   border: 2px solid black;
   border-radius: 10px;
+  color: black;
 
+}
+#closeBtn{
+  height: auto;
 }
 
 #sideMenu ul{
@@ -122,6 +136,7 @@ header{
   text-decoration: none;
   color: inherit;
   font-weight: bold;
+  font-family: 'merry';
 }
 
 #sideMenu #clc{
@@ -133,7 +148,7 @@ header{
   position: fixed;
   top: 0;
   left: 0;
-  width: 300px;
+  width: 280px;
   height: 100%;
   background: var(--Second-color);
   transform: translateX(-100%);
@@ -166,15 +181,6 @@ header{
   opacity: 1;
   pointer-events: all;
 }
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 1px solid black;
-    border-radius: 20%;
-    list-style-type: none;
-    background-color:var(--Second-color) ;
-}
 .content-wrapper {
     width: 100%;
     max-width: 1500px;
@@ -191,8 +197,9 @@ button {
     width: 100%;
     margin-top: auto;/* Add this - ensures footer stays at bottom */
     font-size: inherit;
-    padding-bottom: 100px;
+    padding-bottom: 50px;
 }
+
 .footer p, footer a{
   font-size: 1rem;
   padding: 2px;
@@ -200,6 +207,7 @@ button {
 .footTitle{
     font-size: 1.2em;
     font-weight: bold;
+    font-family: 'merry';
   }
 
 .foot2{
@@ -223,12 +231,19 @@ button {
 
 @media (max-width: 480px) {
   #sideMenu {
-    width: 280px;
+    width: 230px;
     padding: 15px;
+    margin: 0px;
+
   }
   
   #sideMenu button {
-    margin-left: 150px;
+    margin-left: 100px;
+  }
+  #sideMenu ul{
+    gap:20px;
+    padding: 0px;
+    margin-top: 20px;
   }
   .page {
     font-size: 16px;
@@ -238,7 +253,15 @@ button {
   }
     #menuBtn {
     padding: 3px 10px;
-    font-size: 0.7rem;
+    font-size: 0.7em;
+  }
+    #menuBtn img{
+      height: 20px;
+      width: auto;
+  }
+  .top .right img{
+      height: 35px;
+      width: auto;
   }
     button {
     padding: 8px 15px;
@@ -247,9 +270,9 @@ button {
     #vision {
     padding-top: 100px;
   }
- #sideMenu{
-  font-size: 16px;
- }  
+    #sideMenu{
+      font-size: 16px;
+  }  
   .footer{
     font-size: 16px;
     padding: 15px;
