@@ -74,7 +74,18 @@ header{
   justify-content: center;
   align-items: center;
 }
-
+.page{
+    padding:40px;
+    padding-top: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1500px;
+    margin: 0px auto;
+    width: 100%;
+}
 /*Slide bar */
 #menuBtn {
   background: none;
@@ -159,10 +170,10 @@ button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    border-radius: 1px solid black;
     border-radius: 20%;
-    background-color: rgba(255, 255, 255, 0);
-    color: black;
     list-style-type: none;
+    background-color:var(--Second-color) ;
 }
 .content-wrapper {
     width: 100%;
@@ -175,29 +186,22 @@ button {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items:center;
+    align-items:normal;
     padding: 40px;
     width: 100%;
     margin-top: auto;/* Add this - ensures footer stays at bottom */
     font-size: inherit;
+    padding-bottom: 100px;
 }
 .footer p, footer a{
   font-size: 1rem;
   padding: 2px;
 }
+.footTitle{
+    font-size: 1.2em;
+    font-weight: bold;
+  }
 
-.page{
-    padding:40px;
-    padding-top: 120px;
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    justify-content: center;
-    gap: 40px;
-    max-width: 1500px;
-    margin: 0px auto;
-    width: 100%;
-}
 .foot2{
   display: flex;
   flex-direction: column;
@@ -209,6 +213,13 @@ button {
   text-decoration: none;
   color: inherit;
 }
+.foot3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 
 @media (max-width: 480px) {
   #sideMenu {
@@ -244,7 +255,7 @@ button {
     padding: 15px;
     gap: 5px; /* Space between sections */
     margin-top: 20px;
-  
+    padding-bottom: 50px;
   }
    .footer a , .footer p{
     font-size: 12px;
@@ -252,7 +263,19 @@ button {
   footer img{
     height: 25vw;
   }
+  
+  .top{
+  padding: 15px 15px;
+  padding-top: 10px;
+  
   }
+  .topCenter{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+}
  
 
 /* iOS Safari specific fixes */
